@@ -13,7 +13,7 @@ git clone https://github.com/renpy/pygame_sdl2 "/home/tom/ab/$PROJECT"
 
 cd "/home/tom/ab/$PROJECT"
 
-git clone https://github.com/renpy/pygame_sdl2_windeps
+git clone https://github.com/jonmartinms/pygame_sdl2_windeps.git
 "$SCRIPT/build_all.sh" $PROJECT a$DATE
 
 cp $WWW/current/*-$DATE2-*-rapt.zip dist/android.zip || true
@@ -29,7 +29,7 @@ rm "$WWW/pygame_sdl2/current" || true
 ln -s "nightly-$DATE2" "$WWW/pygame_sdl2/current"
 
 # Upload everything to the server.
-rsync -av /home/tom/magnetic/ab/WWW.nightly/pygame_sdl2/ tom@erika.onegeek.org:/home/tom/WWW.nightly/pygame_sdl2 --delete
+# rsync -av /home/tom/magnetic/ab/WWW.nightly/pygame_sdl2/ tom@erika.onegeek.org:/home/tom/WWW.nightly/pygame_sdl2 --delete
 
 # Delete old nightlies.
 find /home/tom/magnetic/ab/WWW.nightly/pygame_sdl2/ -ctime +30 -delete
